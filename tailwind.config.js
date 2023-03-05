@@ -5,7 +5,18 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+
+    container: {
+      center: true
+    },
+    extend: {
+      screens: {
+        'xl': '1200px',
+      },
+     fontFamily: {
+      'roboto' : 'roboto'
+     }
+    },
   },
   plugins: [],
 }

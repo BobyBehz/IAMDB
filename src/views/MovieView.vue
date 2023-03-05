@@ -1,5 +1,6 @@
 <template>
     <div>
-        movieeeee
+        <h1 class="h1">movieeeee</h1>
+        
     </div>
 </template>

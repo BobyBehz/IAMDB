@@ -1,10 +1,61 @@
-@import './base.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-#app {
+/* @import './base.css'; */
+
+:root {
+  --main-color: #1B1717;
+  --seconndary-color: #EEEBDD;
+  --light-red: #CE1212;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('@/assets/Fonts/roboto/roboto-regular.woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'roboto';
+  src: url('@/assets/Fonts/roboto/roboto-bold.woff2');
+  font-weight: 700;
+}
+/* general classes */
+body {
+  background-color: var(--main-color);
+  color: var(--seconndary-color);
+  padding: 0 15px;
+}
+@media (min-width: 1200px) {
+  body {
+    padding: 0;
+  }
+}
+.primary-red {
+  background-color: var(--light-red);
+}
+
+/* font sizes */
+.fw-700 {
+  font-weight: 700;
+}
+.big-t {
+  font-size: 28px;
+  line-height: 50px;
+}
+.medium-t {
+  font-size: 18px;
+  font-weight: 21.09px;
+}
+.small-t {
+  font-size: 16px;
+  font-weight: 18.75px;
+}
+.smaller-t {
+  font-size: 14px;
+  font-weight: 16.41px;
+}
+
+/* #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -36,4 +87,4 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-}
+} */
