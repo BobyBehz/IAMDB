@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="paddingx-15">
         <!-- <div class="flex">
             <h1 class="h1 mt-56 mb-36 font-roboto fw-700 m-auto xl:mr-0 xl:ml-auto xl:mb-32">IAMDB</h1>
         </div> -->

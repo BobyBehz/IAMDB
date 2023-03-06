@@ -10,8 +10,13 @@ module.exports = {
       center: true
     },
     extend: {
+      colors: {
+        'light-red' : '#CE1212',
+        'secondary-color' : '#EEEBDD'
+      },
       screens: {
         'xl': '1200px',
+        '2xl' : '1200px'
       },
      fontFamily: {
       'roboto' : 'roboto'

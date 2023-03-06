@@ -7,7 +7,7 @@
 :root {
   --main-color: #1B1717;
   --seconndary-color: #EEEBDD;
-  --light-red: #CE1212;
+  --light-red: #ce1212;
 }
 @font-face {
   font-family: 'roboto';
@@ -21,8 +21,11 @@
 }
 /* general classes */
 body {
+  box-sizing: border-box;
   background-color: var(--main-color);
   color: var(--seconndary-color);
+}
+.paddingx-15 {
   padding: 0 15px;
 }
 @media (min-width: 1200px) {
@@ -44,15 +47,19 @@ body {
 }
 .medium-t {
   font-size: 18px;
-  font-weight: 21.09px;
+  line-height: 21.09px;
 }
 .small-t {
   font-size: 16px;
-  font-weight: 18.75px;
+  line-height: 18.75px;
 }
 .smaller-t {
   font-size: 14px;
-  font-weight: 16.41px;
+  line-height: 16.41px;
+}
+.trailer-font {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /* #app {
