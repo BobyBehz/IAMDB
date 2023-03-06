@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       colors: {
         'light-red' : '#CE1212',
-        'secondary-color' : '#EEEBDD'
+        'secondary-color' : '#EEEBDD',
+        'fade-secondary-color' : 'rgb(238, 235, 221, 0.2)'
       },
       screens: {
         'xl': '1200px',
