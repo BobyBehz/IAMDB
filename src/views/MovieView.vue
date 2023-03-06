@@ -70,10 +70,52 @@
             </div> -->
             <CastAndCrew/>
         </div>
+        <!-- <div class="paddingx-15">
+            <h2 class="big-t mt-4">Photos</h2>
+            <ul class="photos-list flex flex-wrap p-0 list-none mt-2.5 mb-5 -ml-3">
+                <li v-for="item in 10" class="photos-list-item xl:basis-1/5 xl:max-w-20% basis-1/2 shrink-0 grow-0">
+                    <div class="photo-card w-full py-1.5 pl-3">
+                        <div class="photo after:absolute after:flex after:items-center after:inset-0 after:rounded-xl after:-z-10 w-full relative rounded-xl flex items-center">
+                            <img class="w-full object-cover object-center relative rounded-xl aspect-1.5" src="../assets/images/screenshots/movie pic 1.png" alt="pictures of the movie">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div> -->
+        <Photos/>
+        <div class="padding-left-15">
+            <h2 class="big-t">More like this</h2>
+            <ul class= "xl:gap-0 xl:mt-6 xl:-mb-6 gap-6 my-6 flex flex-nowrap pl-0 list-none overflow-y-hidden overflow-x-scroll">
+                <li v-for="item in 4" class="xl:basis-1/4 grow-0 shrink-0">
+                    <div class="xl:pl-6">
+                        <img class=" mb-3 rounded-xl" src="../assets/images/movie covers/iron man 2.png" alt="movie cover">
+                        <div class="flex items-center px-4">
+                            <h3 class="small-t grow">Iron Man 2</h3>
+                            <img src="../assets/images/star.png" alt="a little star">
+                            <span class="small-t">6.9</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <style scoped>
+.padding-left-15 {
+    padding-left: 15px;
+    padding-right: 0px;
+}
+.movie-img {
+    width: 230px;
+    height: 342px;
+}
+@media (min-width: 1200px) {
+    .movie-img {
+        width: 100%;
+        height: 409px;
+    }
+}
 .background-img {
     background-image: url(@/assets/images/background.jpg);
     height: 41vh;
@@ -90,11 +132,12 @@ import {useIdStore} from '@/stores/Id'
 
 import NameAndDetails from '../components/movie/movie-info/NameAndDetails.vue'
 import CastAndCrew from '../components/movie/movie-info/CastAndCrew.vue'
+import Photos from '../components/movie/Photos.vue'
 
 
 export default {
     components: {
-        NameAndDetails, CastAndCrew
+        NameAndDetails, CastAndCrew, Photos
     },
     data() {
         return {
