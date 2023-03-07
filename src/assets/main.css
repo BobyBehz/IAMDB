@@ -41,10 +41,14 @@ body {
 }
 
 /* font sizes */
+.movie-title {
+  font-size: 32px;
+  line-height: 40px;
+}
 .fw-700 {
   font-weight: 700;
 }
-.big-t {
+.h2-font {
   font-size: 24px;
   line-height: 50px;
 }
@@ -63,6 +67,38 @@ body {
 .trailer-font {
   font-size: 16px;
   line-height: 20px;
+}
+.answer-font {
+  font-size: 12px;
+  line-height: 14px;
+}
+@media (min-width: 1200px) {
+  .movie-title {
+    font-size: 48px;
+  }
+  .trailer-font {
+    font-size: 21px;
+    line-height: 24px;
+  }
+  .answer-font {
+    font-size: 16px;
+    line-height: 18.75px;
+  }
+  .h2-font {
+    font-size: 28px;
+  }
+  .medium-t {
+    font-size: 21px;
+    line-height: 24.09px;
+  }
+  .small-t {
+    font-size: 18px;
+    line-height: 21.09px;
+  }
+  .smaller-t {
+    font-size: 16px;
+    line-height: 18.75px;
+  }
 }
 /* width */
 .w-75p {

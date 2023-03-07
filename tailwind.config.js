@@ -17,6 +17,8 @@ module.exports = {
         'aspect-1.5' : '1.5'
       },
       colors: {
+        'over-screen-color' : 'rgb(27, 23, 23, 0.8)',
+        'main-color' : '#1B1717',
         'light-red' : '#CE1212',
         'dark-red' : '#8E0D0D',
         'secondary-color' : '#EEEBDD',

@@ -1,0 +1,34 @@
+<template>
+    <li v-for="(item, index) in answerVisibility">
+        <p @click="showParagraph(index)" class="fw-700 medium-t p-0 mb-3 cursor-pointer inline-block">Which characters were adapted from Marvel's Iron Man comic books?</p>
+        <div :class="['py-1', 'pl-6', 'mb-4', 'border-l-4', 'border-solid', 'border-light-red', answerVisibility[index] ? 'block' : 'hidden']">
+            <p class="answer-font w-full m-0 opacity-60 xl:w-full ">For this list only the creators of the characters first appearances are listed. As with all comic book characters, Iron Man and his supporting cast have had several reinventions and different contributions from different writers. Theses include different iterations in different mediums that all have added different concepts to the overall mythology of the characters.Theirs Anthony Edward "Tony" Stark, referred to as Tony Stark. He made his first appearance in the comic story "Iron Man Is Born!" Tales of Suspense #39 (March 1963) by writers & Larry Lieber and artists Don Heck & Jack Kirby.Colonel James Rupert "Rhodey" Rhodes, referred to as Rhodey Rhodes on screen. He made his first appearance in the comic story "At the Mercy of My Foes Friends!" from Iron Man #118 (January 1979) by writer David Michelinie, writer/artist Bob Layton and artist John Byrne.Obadiah Stane, who made his first appearance in the comic story "Knight's Errand" from Iron Man #163 (October 1982) by writer Denny O'Neil and artist Luke McDonnell.Virginia "Pepper" Potts, referred to as Pepper Potts on screen. She made her first appearance in the comic story "The Icy Fingers of Jack Frost!" from Tales of Suspense #45 (September 1963) by writers Stan Lee & Robert Bernstein and artist Don Heck.Christine Everhart, who made her first appearance in the comic story "The Best Defense - Part Three: Technology" from Iron Man Volume 3 #75 by writer John Jackson Miller and artist Jorge Lucas.J.A.R.V.I.S. (Just A Rather Very Intelligent System) is based on the comic book character of Edwin Jarvis. Edwin Jarvis made his first appeared in the comic story "Captain America" from Tales of Suspense #59 (November 1964) by writer Stan Lee and artist Jack Kirby.Harold Joseph "Happy" Hogan, referred to as Happy Hogan on screen. He made his first appearance in the comic story "The Icy Fingers of Jack Frost!" from Tales of Suspense #45 (September 1963) by writers Stan Lee & Robert Bernstein and artist Don Heck.Howard Anthony Walter Stark, referred to as Howard Stark on screen. He made his first appearance in the comic story "The Controller Lives!" from Iron Man #28 (August 1970) by writer Archie Goodwin and artist Don Heck.and Nicholas Joseph "Nick" Fury, referred to as Nick Furry on screen. He made his first appearance in the comic story Sergeant Fury and his Howling Commandos #1 (May 1963) by writer Stan Lee and artist Jack Kirby.All other characters were created just for the film by the movie's writers.</p>
+        </div>
+    </li>
+</template>
+
+<style scoped>
+.width-306 {
+    width: 330px
+}
+</style>
+<script>
+export default {
+    data() {
+        return {
+            answerVisibility: [false, false, false, false, false, false, false, false, false],
+        }
+    },
+    methods: {
+        showParagraph(index) {
+            if (this.answerVisibility[index] === false) {
+                this.answerVisibility[index] = true
+            } else {
+                this.answerVisibility[index] = false
+            }
+            console.log(this.answerVisibility[index])
+        },
+    }
+
+}
+</script>

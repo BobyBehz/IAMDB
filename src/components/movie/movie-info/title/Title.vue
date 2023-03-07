@@ -4,10 +4,11 @@
 </template>
 
 <style scoped>
-.movie-title {
+/* .movie-title {
     font-size: 32px;
     line-height: 40px;
-}
+} */
+
 </style>
 
 <script>

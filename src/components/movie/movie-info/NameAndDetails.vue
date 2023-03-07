@@ -1,5 +1,5 @@
 <template>
-    <div class="basis-full">
+    <div class="basis-full xl:basis-2/4">
         <Title/>
         <YearAndDuration/>
         <Links/>

@@ -1,6 +1,6 @@
 <template>
-    <div class="basis-full">
-        <h2 class="big-t mt-14">Cast & Crew</h2>
+    <div class="basis-full xl:basis-1/5 -mt-14 ml-14 fw-700">
+        <h2 class="mt-14 h2-font">Cast & Crew</h2>
         <CastList>
             <CastItem/>
         </CastList>

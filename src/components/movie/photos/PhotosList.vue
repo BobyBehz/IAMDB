@@ -1,7 +1,6 @@
 <template>
-    <h2 class="big-t mt-4">Photos</h2>
     <ul class="photos-list flex flex-wrap p-0 list-none mt-2.5 mb-5 -ml-3">
-        <slot/>
+        <PhotosItem/>
     </ul>
 </template>
 
@@ -9,7 +8,12 @@
 import {mapStores} from 'pinia'
 import {useIdStore} from '@/stores/Id'
 
+import PhotosItem from '../photos/PhotosItem.vue'
+
 export default {
+    components: {
+        PhotosItem,
+    },
     computed: {
         ...mapStores(useIdStore)
     }
