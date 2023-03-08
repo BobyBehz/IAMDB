@@ -21,9 +21,7 @@ export default {
     computed: {
         ...mapStores(useIdStore)
     },
-    // mounted() {
-    //     idStore.getAPI()
-    // }
+    
 }
 
 </script>

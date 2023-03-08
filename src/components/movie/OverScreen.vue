@@ -1,8 +1,9 @@
 <template>
     <section :class="['bg-over-screen-color',idStore.overScreen ? 'xl:block' : 'xl:hidden'  ,'absolute', 'h-full', 'inset-0', 'z-50', 'hidden']">
-        <div class="screen-img block bg-cover bg-center opacity-100 rounded-xl mx-auto relative">
-            <button @click="removeScreen" class="border-2 border-secondary-color border-solid w-10 aspect-square rounded-full right-4 top-4 left-auto block absolute">
-
+        <div class="screen-img block opacity-100 rounded-xl mx-auto relative">
+            <img v-if="idStore.overScreenImage" class="object-center object-cover rounded-xl" :src="idStore.overScreenImage" alt="movie img">
+            <button @click="removeScreen" class="border-2 border-secondary-color border-solid w-10 aspect-square rounded-full right-4 top-4 left-auto absolute flex justify-center items-center pr-0.5">
+                <img src="@/assets/images/exit.png" alt="exit">
             </button>
         </div>
     </section>
@@ -10,7 +11,6 @@
 
 <style>
 .screen-img {
-    background-image: url(../../assets/images/screenshots/movie-pic-7.png);
     width: 946px;
     height: 631px;
     margin-top: 996px;
@@ -23,9 +23,7 @@ import {useIdStore} from '@/stores/Id'
 
 export default {
     data() {
-        return {
-            
-        }
+
     },
     computed: {
         ...mapStores(useIdStore)

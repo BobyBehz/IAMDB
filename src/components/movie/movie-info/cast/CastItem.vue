@@ -8,8 +8,8 @@
             <p class="cast-char-font mt-1 opacity-60">as {{ cast[index].asCharacter }}</p>
         </div>
     </li>
-    <li class="show-all mt-7 text-light-red medium-t gap-4 flex items-center justify-center justify-content-xl-start">
-        Show {{ show }}
+    <li class=" mt-7 text-light-red medium-t gap-4 flex items-center justify-center justify-content-xl-start">
+        <div class="show-all-font">Show {{ show }}</div>
         <button @click="addCast">
             <div class="show-all-vector flex items-center border-solid border-light-red border w-6 rounded-full aspect-square pl-2">
                 <img src="@/assets/images/Vector.png" alt="vector">

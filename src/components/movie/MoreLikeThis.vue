@@ -1,6 +1,6 @@
 <template>
-    <div class="padding-left-15 mt-12 container">
-        <h2 class="h2-font fw-700">More like this</h2>
+    <div class="padding-left-15 mt-12">
+        <h2 class="h2-font fw-700 container xl:pl-3.5">More like this</h2>
         <MoreList/>
     </div>
 </template>
@@ -9,6 +9,11 @@
 .padding-left-15 {
     padding-left: 15px;
     padding-right: 0px;
+}
+@media (min-width: 1200px) {
+    .padding-left-15 {
+        padding-left: 0px;
+    }
 }
 </style>
 

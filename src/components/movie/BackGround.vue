@@ -10,7 +10,7 @@
 }
 @media (min-width: 1200px) {
     .background-img {
-        height: 88vh;
+        height: 100vh;
     }
 }
 </style>

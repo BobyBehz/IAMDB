@@ -15,9 +15,12 @@ import Links from '../movie-info/title/Links.vue'
 import Summary from '../movie-info/title/Summary.vue'
 import DetailList from '../movie-info/title/DetailList.vue'
 
+
+
 export default {
     components: {
         Title,YearAndDuration,Links,Summary,DetailList,
-    }
+    },
+
 }
 </script>

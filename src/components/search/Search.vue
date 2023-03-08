@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-2 justify-center xl:flex-row">
+    <div class="flex flex-col gap-2 justify-center xl:flex-row container">
         <input class="m-auto input rounded-full border border-solid border-white py-3 pl-8 small-t xl:hidden" 
         placeholder="Your favorite movie ..." @keyup.enter="getMovieId" type="text" v-model="typedName">
         <input class="m-auto input rounded-full border border-solid border-white py-3 pl-8 hidden xl:block" 

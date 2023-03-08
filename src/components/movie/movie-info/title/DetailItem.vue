@@ -19,33 +19,61 @@ export default {
             details: [    
             {
                 detailsTitle : 'Writers',
-                detailsContent: useIdStore.writers
+                detailsContent: null,
             }, 
-                
+            
             {
                 detailsTitle : 'Genres',
-                detailsContent: useIdStore.genres
+                detailsContent: null,
             }, 
-                
+            
             {
                 detailsTitle : 'Awards',
-                detailsContent: useIdStore.awards
+                detailsContent: null,
             }, 
-                
+            
             {
                 detailsTitle : 'Country of Origin',
-                detailsContent: useIdStore.countries
+                detailsContent: null,
             }, 
-                
+            
             {
                 detailsTitle : 'IMDB Rating',
-                detailsContent: useIdStore.score
+                detailsContent: null,
             }
             ]
         }
     },
     computed: {
         ...mapStores(useIdStore)
-    }
+    },
+    methods: {
+        getAPI() {
+            fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                this.details[0].detailsContent = res.writers
+                this.details[1].detailsContent = res.genres
+                this.details[2].detailsContent =  res.awards
+                this.details[3].detailsContent = res.countries
+                this.details[4].detailsContent = res.imDbRating
+            })
+        }
+    },
+    // mounted() {
+    //     fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
+    //         .then(res => res.text())
+    //         .then(res => JSON.parse(res))
+    //         .then(res => {
+    //             console.log(res)
+    //             this.details[0].detailsContent = res.writers
+    //             this.details[1].detailsContent = res.genres
+    //             this.details[2].detailsContent =  res.awards
+    //             this.details[3].detailsContent = res.countries
+    //             this.details[4].detailsContent = res.imDbRating
+    //         })
+    // }
+
 }
 </script>
