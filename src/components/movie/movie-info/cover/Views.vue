@@ -18,13 +18,13 @@ export default {
     computed: {
         ...mapStores(useIdStore)
     },
-    // mounted() {
-    //     fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
-    //         .then(res => res.text())
-    //         .then(res => JSON.parse(res))
-    //         .then(res => {
-    //             this.views = res.imDbRatingVotes
-    //         })
-    // }
+    mounted() {
+        fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                this.views = res.imDbRatingVotes
+            })
+    }
 }
 </script>

@@ -35,15 +35,15 @@ export default {
             }
         },
     },
-    // mounted() {
-    //     fetch('https://imdb-api.com/en/API/FAQ/k_i6429ou2/' + this.idStore.movieId)
-    //         .then(res => res.text())
-    //         .then(res => JSON.parse(res))
-    //         .then(res => {
-    //             console.log(res)
-    //             this.faqs = res.items
-    //         })
-    // }
+    mounted() {
+        fetch('https://imdb-api.com/en/API/FAQ/k_i6429ou2/' + this.idStore.movieId)
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                console.log(res)
+                this.faqs = res.items
+            })
+    }
     
 
 }

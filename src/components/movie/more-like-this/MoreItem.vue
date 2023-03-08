@@ -47,25 +47,14 @@ export default {
     computed: {
         ...mapStores(useIdStore)
     },
-    methods: {
-        aaa() {
-            fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
+    mounted() {
+        fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
                 .then(res => res.text())
                 .then(res => JSON.parse(res))
                 .then(res => {
                    this.moreAlike = res.similars
                 })
-        }
-    },
-    mounted() {
-        // fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
-        //         .then(res => res.text())
-        //         .then(res => JSON.parse(res))
-        //         .then(res => {
-        //            this.moreAlike = res.similars
-        //         })
         this.likedId = this.idStore.liked.find(id => (id === this.moreAlike[index].id ))
-        console.log(this.likedId)
     }
 
 }

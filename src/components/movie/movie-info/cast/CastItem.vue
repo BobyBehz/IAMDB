@@ -36,7 +36,7 @@ export default {
     methods: {
         addCast() {
             if (this.castIndex === 5) {
-                this.castIndex = 10
+                this.castIndex = 15
                 this.show = 'less'
             } else {
                 this.castIndex = 5
@@ -44,14 +44,14 @@ export default {
             }
         },
     },
-    // mounted() {
-    //     fetch('https://imdb-api.com/en/API/FullCast/k_i6429ou2/' + this.idStore.movieId)
-    //         .then(res => res.text())
-    //         .then(res => JSON.parse(res))
-    //         .then(res => {
-    //             console.log(res)
-    //             this.cast = res.actors
-    //         })
-    // }
+    mounted() {
+        fetch('https://imdb-api.com/en/API/FullCast/k_i6429ou2/' + this.idStore.movieId)
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                console.log(res)
+                this.cast = res.actors
+            })
+    }
 }
 </script>

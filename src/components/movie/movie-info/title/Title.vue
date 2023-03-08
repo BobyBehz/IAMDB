@@ -22,26 +22,14 @@ export default {
     computed: {
         ...mapStores(useIdStore)
     },
-    methods: {
-        getAPI() {
-            fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
+    mounted() {
+        fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
                 .then(res => res.text())
                 .then(res => JSON.parse(res))
                 .then(res => {
                     this.title = res.title
                     this.directors = res.directors
                 })
-        }
-    },
-    // mounted() {
-    //     console.log(this.idStore.movieId)
-    //     fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
-    //             .then(res => res.text())
-    //             .then(res => JSON.parse(res))
-    //             .then(res => {
-    //                 this.title = res.title
-    //                 this.directors = res.directors
-    //             })
-    // }
+    }
 }
 </script>

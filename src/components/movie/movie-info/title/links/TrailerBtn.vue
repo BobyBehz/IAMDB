@@ -42,12 +42,12 @@ export default {
         ...mapStores(useIdStore)
     },
     mounted() {
-        // fetch('https://imdb-api.com/en/API/Trailer/k_i6429ou2/' + this.idStore.movieId)
-        //     .then(res => res.text())
-        //     .then(res => JSON.parse(res))
-        //     .then(res => {
-        //         this.video = res.link
-        //     })
+        fetch('https://imdb-api.com/en/API/Trailer/k_i6429ou2/' + this.idStore.movieId)
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                this.video = res.link
+            })
     }
 }
 </script>

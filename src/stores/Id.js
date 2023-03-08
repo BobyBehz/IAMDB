@@ -13,9 +13,6 @@ export const useIdStore = defineStore('id', {
         }
     },
     actions: {
-        likeMovie() {
-            this.liked.push(this.movieId)
-            console.log(this.liked)
-        }
+
     }
 })
