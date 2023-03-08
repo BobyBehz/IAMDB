@@ -41,6 +41,14 @@ body {
 }
 
 /* font sizes */
+.cast-name-font {
+  font-size: 16px;
+  line-height: 18.75px;
+}
+.cast-char-font {
+  font-size: 14px;
+  line-height: 16.41px;
+}
 .movie-title {
   font-size: 32px;
   line-height: 40px;

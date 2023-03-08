@@ -1,11 +1,11 @@
 <template>
-    <li v-for="item in castIndex" class="flex items-center gap-3 py-3">
+    <li v-if="cast" v-for="(item,index) in castIndex" class="flex items-center gap-3 py-3">
         <div>
-            <img class="w-75p aspect-square rounded-full" src="@/assets/images/cast/robert downey.png" alt="">
+            <img class="w-75p aspect-square rounded-full object-cover object-center" :src="cast[index].image" alt="">
         </div>
         <div>
-            <h3 class="small-t fw-700">Robert Downey Jr.</h3>
-            <p class="smaller-t mt-1 opacity-60">as Tony Stark</p>
+            <h3 class="cast-name-font fw-700">{{ cast[index].name }}</h3>
+            <p class="cast-char-font mt-1 opacity-60">as {{ cast[index].asCharacter }}</p>
         </div>
     </li>
     <li class="show-all mt-7 text-light-red medium-t gap-4 flex items-center justify-center justify-content-xl-start">
@@ -26,7 +26,8 @@ export default {
     data() {
         return {
             castIndex: 5,
-            show: 'all'
+            show: 'all',
+            cast: null,
         }
     },
     computed: {
@@ -41,8 +42,26 @@ export default {
                 this.castIndex = 5
                 this.show = 'all'
             }
+        },
+        api() {
+            fetch('https://imdb-api.com/en/API/FullCast/k_i6429ou2/' + this.idStore.movieId)
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                console.log(res)
+                this.cast = res.actors
+            })
         }
     },
+    // mounted() {
+    //     fetch('https://imdb-api.com/en/API/FullCast/k_i6429ou2/' + this.idStore.movieId)
+    //         .then(res => res.text())
+    //         .then(res => JSON.parse(res))
+    //         .then(res => {
+    //             console.log(res)
+    //             this.cast = res.actors
+    //         })
+    // }
 
 }
 </script>

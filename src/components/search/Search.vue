@@ -47,7 +47,7 @@ import {useIdStore} from '@/stores/Id'
 export default {
     data() {
         return {
-            movieName: null,
+
         }
     },
     computed: {
@@ -55,15 +55,13 @@ export default {
     },
     methods: {
         getMovieId() {
-            this.movieName = this.typedName 
-            fetch('https://imdb-api.com/en/API/SearchMovie/k_i6429ou2/' + this.movieName)
+            fetch('https://imdb-api.com/en/API/SearchMovie/k_i6429ou2/' + this.typedName)
             .then(res => res.text())
             .then(res => JSON.parse(res))
             .then(res => {
                 console.log(res)
                 this.idStore.movieId = res.results[0].id
                 console.log(this.idStore.movieId)
-                console.log(this.movieName)
                 this.$router.push({ name: 'movie'})
             })
         }

@@ -1,5 +1,5 @@
 <template>
-    <section :class="['bg-over-screen-color',overScreen ? 'block' : 'hidden'  ,'absolute', 'h-full', 'inset-0', 'z-50']">
+    <section :class="['bg-over-screen-color',idStore.overScreen ? 'xl:block' : 'xl:hidden'  ,'absolute', 'h-full', 'inset-0', 'z-50', 'hidden']">
         <div class="screen-img block bg-cover bg-center opacity-100 rounded-xl mx-auto relative">
             <button @click="removeScreen" class="border-2 border-secondary-color border-solid w-10 aspect-square rounded-full right-4 top-4 left-auto block absolute">
 
@@ -18,15 +18,21 @@
 </style>
 
 <script>
+import { mapStores } from 'pinia'
+import {useIdStore} from '@/stores/Id'
+
 export default {
     data() {
         return {
-            overScreen: false,
+            
         }
+    },
+    computed: {
+        ...mapStores(useIdStore)
     },
     methods: {
         removeScreen() {
-            this.overScreen = false
+            this.idStore.overScreen = false
         }
     }
 

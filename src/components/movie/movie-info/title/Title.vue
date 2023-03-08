@@ -4,10 +4,7 @@
 </template>
 
 <style scoped>
-/* .movie-title {
-    font-size: 32px;
-    line-height: 40px;
-} */
+
 
 </style>
 
@@ -18,6 +15,9 @@ import {useIdStore} from '@/stores/Id'
 export default {
     computed: {
         ...mapStores(useIdStore)
+    },
+    mounted() {
+        console.log(this.idStore.movieId)
     }
 }
 </script>
