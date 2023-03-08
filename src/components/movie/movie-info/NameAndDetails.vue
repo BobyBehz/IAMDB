@@ -4,9 +4,7 @@
         <YearAndDuration/>
         <Links/>
         <Summary/>
-        <DetailList>
-            <DetailItem/>
-        </DetailList>
+        <DetailList/>
     </div>
 </template>
 
@@ -16,11 +14,10 @@ import YearAndDuration from '../movie-info/title/YearAndDuration.vue'
 import Links from '../movie-info/title/Links.vue'
 import Summary from '../movie-info/title/Summary.vue'
 import DetailList from '../movie-info/title/DetailList.vue'
-import DetailItem from '../movie-info/title/DetailItem.vue'
 
 export default {
     components: {
-        Title,YearAndDuration,Links,Summary,DetailList,DetailItem,
+        Title,YearAndDuration,Links,Summary,DetailList,
     }
 }
 </script>

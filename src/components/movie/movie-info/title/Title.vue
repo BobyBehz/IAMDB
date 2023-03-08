@@ -1,6 +1,6 @@
 <template>
-    <h1 class="movie-title fw-700">Iron Man</h1>
-    <h3 class="small-t mb-5 mt-1.5">Directors: Jon Favreau</h3>
+    <h1 v-if="idStore.title" class="movie-title fw-700">{{ idStore.title }}</h1>
+    <h3 v-if="idStore.directors" class="small-t mb-5 mt-1.5">Directors: {{ idStore.directors }}</h3>
 </template>
 
 <style scoped>
@@ -18,6 +18,7 @@ export default {
     },
     mounted() {
         console.log(this.idStore.movieId)
+
     }
 }
 </script>

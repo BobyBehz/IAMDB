@@ -1,5 +1,5 @@
 <template>
-    <p class="mb-11 smaller-t opacity-60">After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.</p>
+    <p v-if="idStore.Summary" class="mb-11 smaller-t opacity-60">{{ idStore.Summary }}</p>
 </template>
 
 
