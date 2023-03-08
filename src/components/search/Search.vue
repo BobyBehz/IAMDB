@@ -33,6 +33,8 @@
     }
     .input {
         width: 1018px;
+        font-size: 21px;
+        line-height: 24px;
     }
     ::-webkit-input-placeholder {
         font-size: 21px;

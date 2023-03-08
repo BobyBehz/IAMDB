@@ -7,7 +7,7 @@
 
 <style>
     .search-background {
-        background-image: url(../assets/images/search-background.png);
+        background-image: url(@/assets/images/search-background.png);
     }
 </style>
 
