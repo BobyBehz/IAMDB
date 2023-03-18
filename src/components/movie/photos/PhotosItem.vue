@@ -49,13 +49,13 @@ export default {
         },
     },
     mounted() {
-        // fetch('https://imdb-api.com/en/API/Images/k_i6429ou2/' + this.idStore.movieId + '/Short')
-        //     .then(res => res.text())
-        //     .then(res => JSON.parse(res))
-        //     .then(res => {
-        //         console.log(res)
-        //         this.photos = res.items
-        //     })
+        fetch('https://imdb-api.com/en/API/Images/k_i6429ou2/' + this.idStore.movieId + '/Short')
+            .then(res => res.text())
+            .then(res => JSON.parse(res))
+            .then(res => {
+                console.log(res)
+                this.photos = res.items
+            })
     }
 }
 
