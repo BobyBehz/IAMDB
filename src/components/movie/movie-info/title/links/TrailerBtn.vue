@@ -1,8 +1,8 @@
 <template>
-    <a v-if="video" class="rounded-full " :href="video" title="whatch the trailer" target="_blank">
+    <a v-if="idStore.trailerLink" class="rounded-full " :href="idStore.trailerLink" title="whatch the trailer" target="_blank">
         <div class=" trailer-btn flex items-center justify-center bg-light-red hover:bg-dark-red px-6 xl:px-14 trailer-font rounded-full gap-3 transition-all">
-            <div class="mb-0.5">Watch thrailer</div>
-            <img class="play-img" src="@/assets/images/playimage.png" alt="">
+            <div class="mb-1.5">Watch thrailer</div>
+            <img class="play-img" src="@/assets/images/play image.png" alt="">
         </div>
     </a>
 </template>
@@ -33,21 +33,8 @@ import { mapStores } from 'pinia'
 import {useIdStore} from '@/stores/Id'
 
 export default {
-    data() {
-        return {
-            video: null,
-        }
-    },
     computed: {
         ...mapStores(useIdStore)
     },
-    mounted() {
-        fetch('https://imdb-api.com/en/API/Trailer/k_i6429ou2/' + this.idStore.movieId)
-            .then(res => res.text())
-            .then(res => JSON.parse(res))
-            .then(res => {
-                this.video = res.link
-            })
-    }
 }
 </script>

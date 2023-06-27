@@ -1,6 +1,6 @@
 <template>
-    <div v-if="score" class="imdb-score flex items-center justify-center bg-main-color relative aspect-square rounded-full fw-700 m-1.5  after:absolute after:inset-0 after:-m-1.5 after:-z-10 after:rounded-full bi">
-        {{ score }} 
+    <div v-if="idStore.score" class="imdb-score flex items-center justify-center bg-main-color relative aspect-square rounded-full fw-700 m-1.5  after:absolute after:inset-0 after:-m-1.5 after:-z-10 after:rounded-full bi">
+        {{ idStore.score }} 
     </div>
 </template>
 
@@ -23,21 +23,8 @@ import { mapStores } from 'pinia'
 import {useIdStore} from '@/stores/Id'
 
 export default {
-    data() {
-        return {
-            score: null,
-        }
-    },
     computed: {
         ...mapStores(useIdStore),
     },
-    mounted() {
-        fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
-            .then(res => res.text())
-            .then(res => JSON.parse(res))
-            .then(res => {
-                this.score = res.imDbRating
-            })
-    }
 }
 </script>

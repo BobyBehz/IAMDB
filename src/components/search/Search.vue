@@ -1,10 +1,20 @@
 <template>
     <div class="flex flex-col gap-2 justify-center xl:flex-row container">
-        <input class="m-auto input rounded-full border border-solid border-white py-3 pl-8 small-t xl:hidden" 
-        placeholder="Your favorite movie ..." @keyup.enter="getMovieId" type="text" v-model="typedName">
-        <input class="m-auto input rounded-full border border-solid border-white py-3 pl-8 hidden xl:block" 
-        placeholder="Type the name of your favorite movie ..." @keyup.enter="getMovieId" type="text" v-model="typedName">
-        <button @click="getMovieId" class="m-auto btn primary-red rounded-full">search</button>
+        <input 
+            class="m-auto input rounded-full border border-solid border-white py-3 pl-8 small-t xl:hidden" 
+            placeholder="Your favorite movie ..." 
+            @keyup.enter="idStore.getAPI(); directToMovie()" 
+            type="text" v-model="idStore.searchedName"
+        >
+        <input 
+            class="m-auto input rounded-full border border-solid border-white py-3 pl-8 hidden xl:block" 
+            placeholder="Type the name of your favorite movie ..." 
+            @keyup.enter="idStore.getAPI(); directToMovie()" 
+            type="text" v-model="idStore.searchedName"
+        >
+        <button @click="idStore.getAPI(); directToMovie()" class="m-auto btn primary-red rounded-full">
+            search
+        </button>
     </div>
 </template>
 
@@ -47,26 +57,15 @@ import {mapStores} from 'pinia'
 import {useIdStore} from '@/stores/Id'
 
 export default {
-    data() {
-        return {
-
-        }
-    },
     computed: {
         ...mapStores(useIdStore)
     },
     methods: {
-        getMovieId() {
-            fetch('https://imdb-api.com/en/API/SearchMovie/k_i6429ou2/' + this.typedName)
-            .then(res => res.text())
-            .then(res => JSON.parse(res))
-            .then(res => {
-                console.log(res)
-                this.idStore.movieId = res.results[0].id
-                console.log(this.idStore.movieId)
-                this.$router.push({ name: 'movie'})
-            })
-        }
-    }
+        directToMovie() {
+            setTimeout( () => {
+                this.$router.push({ name : 'movie'})
+            },3000)
+        },
+    },
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="hidden xl:block basis-1/4 pl-16 -mt-11 -ml-16 mr-14">
-        <img v-if="image" class="object-cover w-full mb-4 h-415" :src="image" alt="Movie man cover">
+        <img v-if="idStore.cover" class="object-cover w-full mb-4 h-415" :src="idStore.cover" alt="Movie man cover">
         <div class="flex items-center ml-3 gap-4 rating-div">
             <Rating/>
             <Views/>
@@ -29,21 +29,8 @@ export default {
     components: {
         Rating, Views
     },
-    data() {
-        return {
-            image: null,
-        }
-    },
     computed: {
         ...mapStores(useIdStore)
     },
-    mounted() {
-        fetch('https://imdb-api.com/en/API/Title/k_i6429ou2/' + this.idStore.movieId)
-                .then(res => res.text())
-                .then(res => JSON.parse(res))
-                .then(res => {
-                   this.image = res.image
-                })
-    }
 }
 </script>
