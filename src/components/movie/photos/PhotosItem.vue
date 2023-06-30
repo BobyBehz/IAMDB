@@ -40,7 +40,7 @@ export default {
     methods: {
         addScreen(index) {
             this.idStore.overScreen = true;
-            this.idStore.overScreenImage = this.photos[index].image;
+            this.idStore.overScreenImage = this.idStore.photos[index].image;
         },
     },
 }

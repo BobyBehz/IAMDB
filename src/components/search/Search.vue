@@ -4,13 +4,13 @@
             class="m-auto input rounded-full border border-solid border-white py-3 pl-8 small-t xl:hidden" 
             placeholder="Your favorite movie ..." 
             @keyup.enter="idStore.getAPI(); directToMovie()" 
-            type="text" v-model="idStore.searchedName"
+            type="text" v-model="idStore.movieName"
         >
         <input 
             class="m-auto input rounded-full border border-solid border-white py-3 pl-8 hidden xl:block" 
             placeholder="Type the name of your favorite movie ..." 
             @keyup.enter="idStore.getAPI(); directToMovie()" 
-            type="text" v-model="idStore.searchedName"
+            type="text" v-model="idStore.movieName"
         >
         <button @click="idStore.getAPI(); directToMovie()" class="m-auto btn primary-red rounded-full">
             search

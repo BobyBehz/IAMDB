@@ -40,14 +40,15 @@ body {
 .primary-red {
   background-color: var(--light-red);
 }
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
 
+}
 
 /* font sizes */
 .cast-name-font {

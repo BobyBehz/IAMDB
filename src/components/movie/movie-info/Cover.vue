@@ -1,6 +1,6 @@
 <template>
     <div class="hidden xl:block basis-1/4 pl-16 -mt-11 -ml-16 mr-14">
-        <img v-if="idStore.cover" class="object-cover w-full mb-4 h-415" :src="idStore.cover" alt="Movie man cover">
+        <img v-if="idStore.cover" class="object-cover w-full mb-4 h-415" :src="idStore.cover" alt="Loading...">
         <div class="flex items-center ml-3 gap-4 rating-div">
             <Rating/>
             <Views/>
