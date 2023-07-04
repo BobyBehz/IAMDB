@@ -1,5 +1,5 @@
 <template>
-    <li v-if="idStore.moreAlike" @click="getAlikeAPI(index)" v-for="(item, index) in idStore.moreAlike" class=" card-w grow-0 shrink-0 snap-center cursor-pointer hover:opacity-40 transition-all">
+    <!-- <li v-if="idStore.moreAlike" @click="getAlikeAPI(index)" v-for="(item, index) in idStore.moreAlike" class=" card-w grow-0 shrink-0 snap-center cursor-pointer hover:opacity-40 transition-all">
             <img class="img-size mb-3 rounded-xl card-w" :src="idStore.moreAlike[index].image" alt="movie cover">
             <div class="flex items-center px-4 gap-1.5">
                 <h3 class=" small-t grow fw-700 h3-h">{{ idStore.moreAlike[index].title }}</h3>
@@ -7,7 +7,16 @@
                 <img src="@/assets/images/star.png" alt="a small star">
                 <span class="small-t opacity-40">{{ idStore.moreAlike[index].imDbRating }}</span>
             </div>
-    </li>
+    </li> -->
+    <Slide v-if="idStore.moreAlike" v-for="(item, index) in idStore.moreAlike">
+        <img class="img-size mb-3 rounded-xl card-w" :src="idStore.moreAlike[index].image" alt="movie cover">
+        <div class="flex items-center px-4 gap-1.5">
+            <h3 class=" small-t grow fw-700 h3-h">{{ idStore.moreAlike[index].title }}</h3>
+            <img v-if="likedId === idStore.moreAlike[index].id" src="@/assets/images/redheart.png" alt="a small heart">
+            <img src="@/assets/images/star.png" alt="a small star">
+            <span class="small-t opacity-40">{{ idStore.moreAlike[index].imDbRating }}</span>
+        </div>
+    </Slide>
 </template>
 
 <style scoped>
@@ -35,7 +44,13 @@
 import { mapStores } from 'pinia'
 import {useIdStore} from '@/stores/Id'
 
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
 export default {
+    components: {
+        Carousel, Slide, Pagination, Navigation
+    },
     data() {
         return {
             likedId: null,

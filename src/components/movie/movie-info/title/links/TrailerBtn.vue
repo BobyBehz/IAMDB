@@ -1,7 +1,7 @@
 <template>
     <a v-if="idStore.trailerLink" class="rounded-full " :href="idStore.trailerLink" title="whatch the trailer" target="_blank">
         <div class=" trailer-btn flex items-center justify-center bg-light-red hover:bg-dark-red px-6 xl:px-14 trailer-font rounded-full gap-3 transition-all">
-            <div class="mb-1.5">Watch thrailer</div>
+            <div class="mb-1">Watch thrailer</div>
             <img class="play-img" src="@/assets/images/play image.png" alt="">
         </div>
     </a>
